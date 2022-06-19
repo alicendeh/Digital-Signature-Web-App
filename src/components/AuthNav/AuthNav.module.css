@@ -1,0 +1,36 @@
+.container {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.endItems {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main {
+  margin-right: 22px;
+  margin-left: 22px;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border-radius: 35px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.item:hover {
+  color: #f07136;
+  transition: all 0.8s;
+}

@@ -1,0 +1,19 @@
+.box {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 22px;
+  margin-right: 22px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 42px;
+}
+
+.elem {
+  font-size: 1.5em;
+  font-weight: bold;
+}
