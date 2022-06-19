@@ -3,6 +3,7 @@ import style from './body.module.css';
 import logo from '../../assets/logo.png';
 import auth from '../../assets/Exclude2.svg';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 
 function Body() {
   return (
@@ -21,7 +22,9 @@ function Body() {
         </div>
         <div className={`col-6 row mt-4 ${style.endItems}`}>
           {/* <div className="col-2">Hello,</div> */}
-          <div className={`col-2 ${style.btn}`}>Get Started</div>
+          <Link className={`col-2 ${style.btn}`} to="/main">
+            <div>Get Started</div>
+          </Link>
         </div>
       </div>
       <div className="center">

@@ -32,6 +32,12 @@
   height: 35px;
   font-weight: bold;
 }
+.btn:hover {
+  text-decoration: none;
+  background-color: #f07136;
+  color: white;
+  transition: all 1s;
+}
 
 .header {
   font-size: 3.5em;
