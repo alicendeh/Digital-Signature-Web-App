@@ -1,0 +1,72 @@
+.container {
+  background: url('../../assets/img.png');
+  height: 100vh;
+  width: 100vw;
+}
+
+.container1 {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.endItems {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main {
+  margin-right: 22px;
+  margin-left: 22px;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border-radius: 35px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  font-weight: bold;
+}
+
+.header {
+  font-size: 3.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 135px;
+}
+
+.txt {
+  font-size: 1.5em;
+  margin-top: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.btnStart {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.btn1 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.btnTex {
+  background-color: #d8b909;
+  /* padding: 10px; */
+  border-radius: 35px;
+  font-weight: bold;
+  width: 120px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 35px;
+}

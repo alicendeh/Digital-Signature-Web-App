@@ -1,11 +1,10 @@
 import React from 'react';
-import styles from './LandingPage.module.css';
-import Navbar from '../components/Navbar/Navbar';
+import { Navbar, Body } from '../components';
 
 function LandingPage() {
   return (
     <div>
-      <Navbar />
+      <Body />
     </div>
   );
 }

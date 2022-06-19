@@ -1,3 +1,9 @@
 * {
   list-style: none;
 }
+
+.center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
