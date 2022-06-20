@@ -4,6 +4,8 @@
   border-radius: 14px;
   padding: 22px;
   margin-right: 22px;
+  width: 80%;
+  overflow-wrap: anywhere;
 }
 
 .main {
@@ -16,4 +18,13 @@
 .elem {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.copy {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 22px;
+  margin-right: 22px;
+  word-wrap: break-word;
 }
