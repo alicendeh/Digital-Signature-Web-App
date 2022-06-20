@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 import style from './AuthNav.module.css';
+import { Link } from 'react-router-dom';
 
 function AuthNav({ currentPath, setCurrentPath }) {
   return (
     <div className={`row  ${style.main}`}>
       <div className={`${style.container} col-7`}>
         <div>
-          <img src={logo} width={'125px'} alt="App Logo" />
+          <Link to="/">
+            <img src={logo} width={'125px'} alt="App Logo" />
+          </Link>
         </div>
       </div>
       <div className={`col-5 row mt-4 `}>

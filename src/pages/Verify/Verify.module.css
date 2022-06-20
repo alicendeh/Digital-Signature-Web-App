@@ -1,0 +1,53 @@
+.box {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 22px;
+  margin-right: 22px;
+}
+
+.input {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 22px;
+  margin-right: 22px;
+  width: 40vw;
+  border: none;
+}
+
+.secretKey {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 22px;
+  margin-right: 22px;
+  width: 34vw;
+  border: none;
+}
+
+.btn {
+  width: 40vw;
+  padding: 12px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 42px;
+}
+
+.elem {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.heading {
+  font-size: 31px;
+  font-weight: bold;
+}
+
+.press {
+  width: 890%;
+}

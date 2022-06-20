@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './body.module.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 import auth from '../../assets/Exclude2.svg';
 import '../../App.css';
 import { Link } from 'react-router-dom';
