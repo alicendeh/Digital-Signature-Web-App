@@ -23,6 +23,7 @@
   padding: 22px;
   margin-right: 22px;
   width: 34vw;
+  word-wrap: break-word;
   border: none;
 }
 
@@ -41,6 +42,8 @@
 .elem {
   font-size: 1.5em;
   font-weight: bold;
+  color: black;
+  text-align: left;
 }
 
 .heading {
@@ -50,4 +53,24 @@
 
 .press {
   width: 890%;
+}
+
+.copy {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 22px;
+  margin-right: 22px;
+  word-wrap: break-word;
+}
+
+.message {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 42px;
+  color: black;
+  width: 50%;
+  margin-right: 22px;
+  cursor: pointer;
 }

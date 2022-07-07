@@ -1,0 +1,12 @@
+{
+  "secret": "!#9ad@fqp@org",
+  "mongoURI": "mongodb+srv://dreaminstitute:dreaminstitute@cluster0.vp79b.mongodb.net/DreamInstitute?retryWrites=true&w=majority",
+  "API_SECRET": "VLC_QF8I2LHU--WOGzRUbQebsEU",
+  "API_KEY": "423218121414418",
+  "USER_NAME": "university-of-buea",
+  "aws_id": "AKIASPYCAJERCOQ3DXSW",
+  "aws_secret": "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",
+  "bucket_name": "dreamins",
+  "endpoint": "https://dreaminstitute.s3.amazonaws.com",
+  "region": "us-east-1"
+}

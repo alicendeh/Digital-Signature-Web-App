@@ -18,7 +18,7 @@ function AuthNav({ currentPath, setCurrentPath }) {
           <li
             className={`col ${style.item}`}
             style={{
-              color: currentPath === 'Generate' ? '#f07136' : '#000',
+              color: currentPath === 'Generate' ? '#ffcf58' : '#000',
               fontWeight: currentPath === 'Generate' ? 'bold' : 'normal',
             }}
             onClick={() => setCurrentPath('Generate')}
@@ -29,7 +29,7 @@ function AuthNav({ currentPath, setCurrentPath }) {
             className={`col ${style.item}`}
             onClick={() => setCurrentPath('Signature')}
             style={{
-              color: currentPath === 'Signature' ? '#f07136' : '#000',
+              color: currentPath === 'Signature' ? '#ffcf58' : '#000',
               fontWeight: currentPath === 'Signature' ? 'bold' : 'normal',
             }}
           >
@@ -39,7 +39,7 @@ function AuthNav({ currentPath, setCurrentPath }) {
             className={`col ${style.item}`}
             onClick={() => setCurrentPath('Verify')}
             style={{
-              color: currentPath === 'Verify' ? '#f07136' : '#000',
+              color: currentPath === 'Verify' ? '#ffcf58' : '#000',
               fontWeight: currentPath === 'Verify' ? 'bold' : 'normal',
             }}
           >

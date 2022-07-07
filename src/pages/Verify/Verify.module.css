@@ -4,6 +4,7 @@
   border-radius: 14px;
   padding: 22px;
   margin-right: 22px;
+  color: black;
 }
 
 .input {
@@ -41,6 +42,8 @@
 .elem {
   font-size: 1.5em;
   font-weight: bold;
+  color: black;
+  text-align: left;
 }
 
 .heading {

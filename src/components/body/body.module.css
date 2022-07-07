@@ -34,7 +34,7 @@
 }
 .btn:hover {
   text-decoration: none;
-  background-color: #f07136;
+  background-color: #ffcf58;
   color: white;
   transition: all 1s;
 }
@@ -65,7 +65,7 @@
 }
 
 .btnTex {
-  background-color: #d8b909;
+  background-color: #ffcf58;
   /* padding: 10px; */
   border-radius: 35px;
   font-weight: bold;
@@ -75,4 +75,23 @@
   display: flex;
   justify-content: center;
   height: 35px;
+}
+
+/*  */
+
+.input {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 14px;
+  padding: 22px;
+  margin-right: 22px;
+  width: 40vw;
+  border: none;
+}
+
+.elem {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: black;
+  text-align: left;
 }
