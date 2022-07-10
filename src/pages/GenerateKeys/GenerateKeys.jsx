@@ -14,19 +14,18 @@ import {
   icon_twitter,
 } from '../../assets';
 
-function GenerateKeys() {
-  const URL = process.env.PUBLIC_URL;
+const URL = process.env.REACT_APP_BASEURL;
 
+function GenerateKeys() {
   const [keys, setkeys] = useState({});
   const [loading, setloading] = useState(false);
   const [isPrivateKeyCopied, setIsPrivateKeyCopied] = useState(false);
   const [isPublicCopied, setIsPublicCopied] = useState(false);
 
   const onGenerate = async () => {
-    console.log('al');
     setloading(true);
     let res = await axios
-      .get(`http://localhost:8000/generate-key-pair`)
+      .get(`${URL}/core/generate-key-pair`)
       .finally(() => {
         setloading(false);
       })
@@ -35,13 +34,13 @@ function GenerateKeys() {
   };
 
   const copyPrivateKey = () => {
-    navigator.clipboard.writeText(keys.privateKey);
+    navigator.clipboard.writeText(keys.user.keyPairs[0].secretKey);
     setIsPrivateKeyCopied(true);
     setIsPublicCopied(false);
   };
 
   const copyPiblicKey = () => {
-    navigator.clipboard.writeText(keys.publicKey);
+    navigator.clipboard.writeText(keys.user.keyPairs[0].publicKey);
     setIsPublicCopied(true);
     setIsPrivateKeyCopied(false);
   };
@@ -66,7 +65,7 @@ function GenerateKeys() {
                 <div className="d-flex">
                   <LinesEllipsis
                     className={styles.box}
-                    text={keys && keys.privateKey}
+                    text={keys && keys.user.keyPairs[0].publicKey}
                     maxLine="1"
                     ellipsis="..."
                     trimRight
@@ -85,7 +84,7 @@ function GenerateKeys() {
                 <div className="d-flex">
                   <LinesEllipsis
                     className={styles.box}
-                    text={keys && keys.publicKey}
+                    text={keys && keys.user.keyPairs[0].secretKey}
                     maxLine="1"
                     ellipsis="..."
                     trimRight

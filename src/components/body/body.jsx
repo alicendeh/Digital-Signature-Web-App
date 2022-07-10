@@ -3,11 +3,14 @@ import style from './body.module.css';
 import logo from '../../assets/logo.svg';
 import auth from '../../assets/Exclude2.svg';
 import '../../App.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Form, Col, Button, Row, Modal } from 'react-bootstrap';
+import axios from 'axios';
+import setAuthToken from '../../setAuthToken';
 
+const URL = process.env.REACT_APP_BASEURL;
 function Body() {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <div className={style.container}>
@@ -52,6 +55,24 @@ function Body() {
 export default Body;
 
 function MyVerticallyCenteredModal(props) {
+  let navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    phoneNumber: '',
+  });
+
+  const onLogin = async () => {
+    props.close(false);
+    try {
+      let res = await axios.post(`${URL}/users/CreateAccount`, formData);
+
+      setAuthToken(res.data.token);
+      navigate('/main');
+    } catch (err) {
+      console.log(err, 'oops something went wring');
+    }
+  };
+
   return (
     <Modal
       show={props.show}
@@ -80,9 +101,9 @@ function MyVerticallyCenteredModal(props) {
           <div className="d-flex">
             <div>
               <input
-                // onChange={(e) =>
-                //   setFormData({ ...formData, privateKey: e.target.value })
-                // }
+                onChange={(e) =>
+                  setFormData({ ...formData, phoneNumber: e.target.value })
+                }
                 type="text"
                 placeholder="Enter your phone number"
                 className={style.input}
@@ -92,11 +113,11 @@ function MyVerticallyCenteredModal(props) {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Link to="/main">
-          <div className="btn btn-primary" onClick={() => props.close(false)}>
-            Proceed
-          </div>
-        </Link>
+        {/* <Link to="/main"> */}
+        <div className="btn btn-primary" onClick={onLogin}>
+          Proceed
+        </div>
+        {/* </Link> */}
       </Modal.Footer>
     </Modal>
   );

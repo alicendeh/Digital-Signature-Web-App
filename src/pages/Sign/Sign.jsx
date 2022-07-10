@@ -4,6 +4,8 @@ import axios from 'axios';
 import LinesEllipsis from 'react-lines-ellipsis';
 import { v4 as uuidv4 } from 'uuid';
 
+const URL = process.env.REACT_APP_BASEURL;
+
 function Sign() {
   const [formData, setFormData] = useState({
     data: '',
@@ -25,14 +27,9 @@ function Sign() {
   const onSign = async () => {
     setLoading(true);
     if (userSelection === 'message') {
-      const dataToSend = new FormData();
-
-      dataToSend.append('data', formData.data);
-      dataToSend.append('privateKey', formData.privateKey);
-
-      console.log(dataToSend, 'to send');
-      const res = await axios.post('http://localhost:8000/sign', dataToSend);
+      const res = await axios.post(`${URL}/core/sign`, formData);
       setSignature(res.data);
+      console.log(res.data);
       setLoading(false);
     } else {
       const dataToSend = new FormData();
@@ -49,9 +46,12 @@ function Sign() {
   };
 
   const copySignature = () => {
-    navigator.clipboard.writeText(signature.signature);
+    navigator.clipboard.writeText(
+      signature.user.keyFactors[signature.user.keyFactors.length - 1].signature
+    );
     setSignatureCopy(true);
   };
+
   return (
     <div>
       <div className={styles.main}>
@@ -171,14 +171,19 @@ function Sign() {
             </button>
           </div>
 
-          {Object.keys(signature).length > 1 && (
+          {Object.keys(signature).length >= 1 && (
             <div className="mt-3">
               <p className={styles.elem}>Generated Signature</p>
               <div className="d-flex">
                 <div>
                   <LinesEllipsis
                     className={styles.secretKey}
-                    text={signature && signature.signature}
+                    text={
+                      signature &&
+                      signature.user.keyFactors[
+                        signature.user.keyFactors.length - 1
+                      ].signature
+                    }
                     maxLine="1"
                     ellipsis="..."
                     trimRight
