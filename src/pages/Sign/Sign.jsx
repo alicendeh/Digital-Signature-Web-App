@@ -36,10 +36,11 @@ function Sign() {
 
       dataToSend.append('data', formData.data);
       dataToSend.append('privateKey', formData.privateKey);
-      dataToSend.append('pdf', pdf);
+      dataToSend.append('images', pdf);
 
       console.log(dataToSend, 'to send');
-      const res = await axios.post('http://172.20.10.6/sign', dataToSend);
+      const res = await axios.post(`${URL}/core/sign/file`, dataToSend);
+      console.log(res.data, 'data');
       setSignature(res.data);
       setLoading(false);
     }
@@ -138,7 +139,7 @@ function Sign() {
                         required
                         type="file"
                         name="upload"
-                        accept="application/pdf , application/msword,application/vnd.ms-excel,application/vnd.ms-powerpoint,text/plain"
+                        // accept="application/pdf , image/png, image/jpg"
                         onChange={(e) => handlePdfDocument(e)}
                       />
                     </div>

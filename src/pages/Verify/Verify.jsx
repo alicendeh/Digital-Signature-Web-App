@@ -13,6 +13,9 @@ function Verify() {
     publicKey: '',
     signature: '',
   });
+  const [fileData, setFileData] = useState();
+  const [imageData, setImageData] = useState();
+
   const onVerify = async () => {
     setLoading(true);
     try {
@@ -32,11 +35,34 @@ function Verify() {
     }
   };
 
-  // useEffect(() => {
-  //   console.log(original);
-  //   Object.keys(original).length >= 1 && setCorrect(true);
-  //   !correct && setOriginal({});
-  // }, [original, correct]);
+  useEffect(() => {
+    getFile();
+  }, [original]);
+
+  const getFile = async () => {
+    if (Object.keys(original).length > 3) {
+      setCorrect(true);
+      console.log(original.pdfURL, 'in');
+      if (original.pdfURL === undefined) {
+      } else {
+        setLoading(false);
+        if (original.pdfURL.length > 0) {
+          if (original.message.includes('.pdf')) {
+            console.log('pdf');
+            setFileData(`${URL}/core/pdf/${original.pdfURL}`);
+            setImageData('');
+          } else {
+            setImageData(`${URL}/core/pdf/${original.pdfURL}`);
+            setFileData('');
+          }
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    console.log(correct, 'correct here');
+  }, [correct]);
 
   return (
     <div>
@@ -83,9 +109,33 @@ function Verify() {
               {loading ? 'Verifying....' : 'Verify'}
             </button>
           </div>
+
+          {/* {original.message} */}
+
           <div className="mt-5">
-            {Object.keys(original).length >= 1 ? (
-              <div className={styles.input}>{original.message}</div>
+            {correct ? (
+              <div>
+                {Object.keys(original).length >= 1 && (
+                  <div className={styles.input}>
+                    {fileData ? (
+                      <div>
+                        {' '}
+                        <a href={fileData} target="_blank">
+                          click here to open
+                        </a>
+                      </div>
+                    ) : imageData ? (
+                      <div>
+                        <a href={imageData} target="_blank">
+                          click here to open
+                        </a>
+                      </div>
+                    ) : (
+                      original.message
+                    )}
+                  </div>
+                )}
+              </div>
             ) : (
               <div
                 className={`${styles.input}`}
@@ -113,6 +163,26 @@ function Verify() {
                 </p>
               </div>
             )}
+          </div>
+          <div className="mt-5">
+            {/* {Object.keys(original).length >= 1 ? (
+              <div className={styles.input}>
+                {fileData ? (
+                  <div>
+                    {' '}
+                    <a href={fileData} target="_blank">
+                      click here to open
+                    </a>
+                  </div>
+                ) : imageData ? (
+                  <div>
+                    <a href={imageData} target="_blank">
+                      click here to open
+                    </a>
+                  </div>
+                ) : null}
+              </div>
+            ) : null} */}
           </div>
 
           {/* <div className="mt-3">
